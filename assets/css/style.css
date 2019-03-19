@@ -1,0 +1,11 @@
+.jumbotron {
+  background-image: url("../images/trainpic1.jpg");
+
+  color: white;
+}
+#current-status {
+  color: white;
+}
+h3 {
+  color: white;
+}

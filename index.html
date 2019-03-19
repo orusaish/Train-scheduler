@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Train_scheduler</title>
+    <!-- bootstrap CDN -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/cerulean/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!-- jquery cdn  -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <!-- firebase CDN -->
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <!-- moment.js CDN -->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="jumbotron text-center">
+        <h1 class="display-4">Train Scheduler</h1>
+        <p class="lead">
+          A place where you will get all information about train timings
+        </p>
+        <h3>Today is <span id="current-status"></span></h3>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="panel-group">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Add Train</div>
+              <form>
+                <div class="form-group">
+                  <label for="Tname">Train Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Tname"
+                    aria-describedby="emailHelp"
+                    placeholder="Kitchener Go"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="Destination">Destination</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="Tdestination"
+                    placeholder="Kitchener"
+                  />
+                </div>
+                <div class="form-group form-check">
+                  <label for="train-time"
+                    >First train time (HH:mm, AM/PM)</label
+                  >
+                  <input
+                    type="time"
+                    class="Ttime"
+                    id="train-time"
+                    placeholder="16:45"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="frequency">Frequency (mins)</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="frequency"
+                    placeholder="60"
+                  />
+                </div>
+                <button class="btn btn-primary" id="add-train" type="submit">
+                  Submit
+                </button>
+                <br /><br />
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="container-fluid">
+            <div class="panel panel-primary">
+              <div class="panel-heading">Current Train Schedule</div>
+              <div class="table-responsive">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th><strong>Train name</strong></th>
+                      <th><strong>Destination</strong></th>
+                      <th><strong>Frequency (min)</strong></th>
+                      <th><strong>Next arrival</strong></th>
+                      <th><strong>Next Train</strong></th>
+                    </tr>
+                  </thead>
+                  <tbody id="new-train"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/javascript/main.js"></script>
+  </body>
+</html>
