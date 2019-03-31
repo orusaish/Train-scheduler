@@ -52,8 +52,6 @@ $(document).ready(function() {
       Frequency: frequency,
       dateEntered: firebase.database.ServerValue.TIMESTAMP
     });
-    alert("form submitted");
-
     return false;
   });
 
